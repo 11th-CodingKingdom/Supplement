@@ -1,5 +1,4 @@
 # Supplement
-준비자료
 
 MelonCrawling 실행을 위한 python package list
 1. Beautifulsoup4 (pip install bs4)
