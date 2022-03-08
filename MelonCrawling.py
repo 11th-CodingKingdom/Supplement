@@ -41,12 +41,12 @@ def melonCrawling(rank_type, genre, year):
 
 def insert_all():
     db.musics.drop()
-    Genre = ['KPOP', 'POP']
+    Genre = ['KPOP']
     rank_type = ['AG', 'YE']
     for g in Genre:
         for t in rank_type : 
             i = 1980
-            while i < 2011:
+            while i < 2020:
                 melonCrawling(t, g, i)
                 if t == 'AG':
                     i += 10
