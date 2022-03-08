@@ -31,7 +31,7 @@ def melonCrawling(rank_type, genre, year):
         albumImageUrl = music.select_one('td:nth-child(3) > div > a > img').get('src')
         title = music.select_one('td:nth-child(4) > div > div > div.ellipsis.rank01 > span').text.strip(' \n')
         rank = music.select_one('td:nth-child(2) > div > span').text
-        singer = music.select_one('td:nth-child(4) > div > div > div:nth-child(3) > div.ellipsis.rank02 > a:nth-child(1)').text
+        singer = music.select_one('td:nth-child(4) > div > div > div:nth-child(3) > div.ellipsis.rank02 > span').text
         like = music.select_one('td:nth-child(5) > div > button > span.cnt').text.strip(' \n').strip('총건수\n')
         musics = {'Genre': genre, 'year': year, 'rank_type' : rank_type, 'rank': rank, 'title': title, 'singer': singer, 'albumImageUrl': albumImageUrl, 'like': int(like.replace(",", ""))}
         db.musics.insert_one(musics)
